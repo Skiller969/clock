@@ -5,15 +5,45 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tailwind-template</title>
+    <style>
+      body {
+        scrollbar-width: none;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
   </head>
   <body class="bg-gray-700 text-white">
-    <div class="clock-container flex justify-center items-center h-screen">
-      <div
-        class="clock flex justify-center items-center p-20 border-2 border-black rounded-2xl text-6xl shadow-xl"
-      >
-        <h1 class="">00:00:00</h1>
+    <body class="bg-gray-700 text-white">
+      <div class="min-h-screen flex flex-col items-center">
+        <h1 class="Title text-center mt-20 text-6xl font-bold">
+          Indian Standard Time
+        </h1>
+
+        <div class="clock-container flex justify-center items-center mt-10">
+          <div
+            class="clock flex justify-center items-center p-20 border-2 border-black rounded-2xl text-6xl shadow-xl"
+          >
+            <h1>00:00:00</h1>
+          </div>
+        </div>
+        <div class="option mt-2 flex gap-10 items-center justify-center">
+          <select name="select" id="select" class="text-2xl">
+            <option value="india">india</option>
+            <option value="usa">USA</option>
+            <option value="japan">Japan</option>
+          </select>
+
+          <button
+            class="btn border-2 border-gray-700 p-4 bg-gray-800 rounded-2xl focus:outline-2 focus:outline-offset-2 focus:outline-gray-400"
+          >
+            change country
+          </button>
+        </div>
       </div>
-    </div>
+    </body>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
