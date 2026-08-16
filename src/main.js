@@ -6,6 +6,7 @@ const clock = document.querySelector(".clock");
 const prevTitle = document.querySelector(".Title");
 const btn = document.querySelector(".btn");
 const select = document.querySelector("#select");
+const date = document.querySelector(".date");
 const countries = {
   india: {
     title: "Indian Standard Time",
@@ -34,7 +35,17 @@ function updateClock() {
     minute: "2-digit",
     second: "2-digit",
   };
+
+  const dateOptions = {
+    timeZone: timeZone,
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  };
   clock.textContent = now.toLocaleTimeString("en-US", options);
+
+  date.textContent = now.toLocaleDateString("en-US", dateOptions);
 }
 btn.addEventListener("click", () => {
   let selected_countries = countries[select.value];
